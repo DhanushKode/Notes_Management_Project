@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="static/dashboard.css">
+</head>
+
+<body>
+
+<nav>
+
+    <h2>Auth System</h2>
+
+    <ul>
+
+        <li class="dropdown">
+
+            <a href="#">Notes</a>
+
+            <div class="dropdown-content">
+                <a href="{{ url_for('addnotes') }}">Add Notes</a>
+                <a href="{{ url_for('viewallnotes') }}">View All Notes</a>
+                <a href="{{ url_for('getexceldata') }}">Get Excel Data</a>
+            </div>
+
+        </li>
+
+        <li class="dropdown">
+
+            <a href="#">Files</a>
+
+            <div class="dropdown-content">
+                <a href="{{ url_for('uploadfile') }}">Upload file</a>
+                <a href="{{ url_for('viewallfiles') }}">View All Files</a>
+            </div>
+
+        </li>
+
+    </ul>
+    {{session.get('user')}}
+    <form class="search" method="post" action="{{url_for('search')}}">
+        <input type="text" name='sdata' placeholder="Search">
+    </form>
+
+    <a href="{{url_for('userlogout')}}">
+        <button class="logout-btn">Logout</button>
+    </a>
+
+</nav>
+
+<div class="dashboard-container">
+
+    <h1>Welcome to Authentication Dashboard</h1>
+
+    <p>
+        You have successfully logged in.
+        Use the navigation bar to manage your Notes and Files.
+    </p>
+
+    <div class="dashboard-cards">
+
+        <div class="dash-card">
+            <h3>Notes</h3>
+            <p>Store and Manage Notes</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Files</h3>
+            <p>Upload and Download Files</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

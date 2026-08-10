@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OTP Verification</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/otp.css') }}">
+
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p style="color: aquamarine;">{{ message }}</p>
+    {% endfor %}
+    
+  {% endif %}
+{% endwith %}
+<body>
+
+<div class="container py-5">
+
+    <div class="otp-card mx-auto">
+
+        <h2 class="text-center mb-3">
+
+            OTP Verification
+
+        </h2>
+
+        <p class="text-center">
+
+            Enter the OTP sent to your registered email.
+
+        </p>
+
+        <form  method="POST">
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    OTP
+
+                </label>
+
+                <input
+                    type="text"
+                    name="otp"
+                    maxlength="6"
+                    class="form-control"
+                    placeholder="Enter 6-digit OTP"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary w-100">
+
+                Verify OTP
+
+            </button>
+
+        </form>
+
+        <div class="text-center mt-4">
+
+            Didn't receive OTP? 
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p style="color: rgb(172, 36, 45);">{{ message }}</p>
+    {% endfor %}
+    
+  {% endif %}
+{% endwith %}
+<body>
+
+<div class="container py-5">
+
+<div class="register-card mx-auto">
+
+<h2 class="text-center mb-4">
+
+Create Account
+
+</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Username
+
+</label>
+
+<input
+type="text"
+name="username"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Email
+
+</label>
+
+<input
+type="email"
+name="email"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Password
+
+</label>
+
+<input
+type="password"
+name="password"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-4">
+
+</div>
+
+<button
+type="submit"
+class="btn btn-success w-100">
+
+Register
+
+</button>
+
+</form>
+
+<div class="text-center mt-4">
+
+Already have an account?
+
+<a href="{{ url_for('userlogin') }}">
+
+Login
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

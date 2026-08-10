@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+
+    <div class="welcome-card text-center">
+
+        <h1>📒 Notes Management System</h1>
+
+        <p>
+            Store Notes, Upload Files and Manage Everything Securely.
+        </p>
+
+        <div class="mt-4">
+
+            <a href="{{ url_for('userregister') }}" class="btn btn-primary btn-lg me-3">
+                Register
+            </a>
+
+            <a href="{{ url_for('userlogin') }}" class="btn btn-success btn-lg">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
