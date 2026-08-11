@@ -8,7 +8,7 @@ import re
 from stoken import entoken, dntoken
 from io import BytesIO
 from mysql.connector import (connection)
-mydb = connection.MySQLConnection(user='root', host='localhost',password='admin123',db='smp')
+mydb = connection.MySQLConnection(user='flaskuser', host='localhost',password='password',db='db')
 app = Flask(__name__)
 excel.init_excel(app)
 app.secret_key=b'\xd9\xad\x1b\xf3-'
@@ -451,4 +451,5 @@ def newpassword(data):
           return render_template('reset.html,userdata=data')
 
      return render_template('reset.html')
-app.run()
+if __name__=='__main__':
+     app.run()
